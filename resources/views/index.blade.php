@@ -44,7 +44,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-5">
           <div class="col">
             <div class="card shadow-sm">
-              <img src="/storage/imagens/rj.jpg" class="card-img-top imagem-card" alt="...">
+              <a href="/storage/imagens/rj.jpg" target="_blank"><img src="/storage/imagens/rj.jpg" class="card-img-top imagem-card" alt="..."></a>
               <div class="card-body">
                 <ul class="card-text">
                   <li><span class="fw-bold">Estado: </span>Rio de Janeiro</li>
@@ -57,7 +57,7 @@
           </div>
           <div class="col">
             <div class="card shadow-sm">
-              <img src="/storage/imagens/sp.jpg" class="card-img-top imagem-card" alt="...">
+            <a href="/storage/imagens/sp.jpg" target="_blank"><img src="/storage/imagens/sp.jpg" class="card-img-top imagem-card" alt="..."></a>
               <div class="card-body">
                 <ul class="card-text">
                   <li><span class="fw-bold">Estado: </span>São Paulo</li>
@@ -70,7 +70,7 @@
           </div>
           <div class="col">
             <div class="card shadow-sm">
-              <img src="/storage/imagens/rj2.png" class="card-img-top imagem-card" alt="...">
+            <a href="/storage/imagens/rj2.png" target="_blank"><img src="/storage/imagens/rj2.png" class="card-img-top imagem-card" alt="..."></a>
               <div class="card-body">
                 <ul class="card-text">
                   <li><span class="fw-bold">Estado: </span>Rio de Janeiro</li>
@@ -83,7 +83,7 @@
           </div>
           <div class="col">
             <div class="card shadow-sm">
-              <img src="/storage/imagens/mg.jpg" class="card-img-top imagem-card" alt="...">
+            <a href="/storage/imagens/mg.jpg" target="_blank"><img src="/storage/imagens/mg.jpg" class="card-img-top imagem-card" alt="..."></a>
               <div class="card-body">
                 <ul class="card-text">
                   <li><span class="fw-bold">Estado: </span>Minas Gerais</li>
