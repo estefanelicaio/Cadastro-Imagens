@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ImagemController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,4 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/download', [ImagemController::class, 'download']);
