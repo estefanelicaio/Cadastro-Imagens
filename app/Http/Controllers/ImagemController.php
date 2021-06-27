@@ -16,4 +16,11 @@ class ImagemController extends Controller
         return Storage::download('/imagens/' . $imagem);
     }
 
+
+    public function upload() {
+
+        return view('imagem.upload');
+
+    }
+
 }

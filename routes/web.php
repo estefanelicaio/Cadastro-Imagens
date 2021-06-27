@@ -20,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('/download', [ImagemController::class, 'download']);
+Route::get('/upload', [ImagemController::class, 'upload']);

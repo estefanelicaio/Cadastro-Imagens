@@ -13,7 +13,7 @@
   <header>
     <nav class="navbar fixed-top navbar-dark bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Catálogo de Imagens</a>
+        <a class="navbar-brand" href="/">Catálogo de Imagens</a>
       </div>
     </nav>
   </header>
