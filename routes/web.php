@@ -19,5 +19,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::post('/pesquisar', [ImagemController::class, 'pesquisa']);
+
 Route::get('/download', [ImagemController::class, 'download']);
-Route::get('/upload', [ImagemController::class, 'upload']);
+
+Route::view('/upload', 'imagem.upload');
+
+Route::post('/upload', [ImagemController::class, 'upload']);

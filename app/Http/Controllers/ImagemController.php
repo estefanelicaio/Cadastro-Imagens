@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ImagemController extends Controller
 {
-    
+
     public function download(Request $request)
     {
 
@@ -16,11 +16,14 @@ class ImagemController extends Controller
         return Storage::download('/imagens/' . $imagem);
     }
 
+    public function upload(Request $request)
+    {
+        echo $request->file('imagem')->store('public');
+    }
 
-    public function upload() {
-
-        return view('imagem.upload');
-
+    public function pesquisa(Request $request)
+    {
+        echo $request->get('teste');
     }
 
 }
