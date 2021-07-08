@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Imagem extends Model
 {
     protected $table = 'imagens';
+    protected $fillable = ['estado', 'cidade', 'data', 'caminho_imagem'];
 }

@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::view('/', [ImagemController::class, 'index']);
 
 Route::post('/pesquisar', [ImagemController::class, 'pesquisa']);
 
@@ -25,4 +23,4 @@ Route::get('/download', [ImagemController::class, 'download']);
 
 Route::view('/upload', 'imagem.upload');
 
-Route::post('/upload', [ImagemController::class, 'upload']);
+Route::post('/enviar', [ImagemController::class, 'store']);

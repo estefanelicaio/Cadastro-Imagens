@@ -3,11 +3,11 @@
 @section('principal')
     <div class="bg-light">
         <div class="container py-5">
-            <form class="row g-3 d-flex justify-content-center" action="/upload" method="POST" enctype="multipart/form-data">
+            <form class="row g-3 d-flex justify-content-center" action="/enviar" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-3">
-                    <label for="ListaDeEstados" class="form-label">Estado</label>
-                    <input class="form-control" list="datalistEstados" id="ListaDeEstados" placeholder="Pesquisar...">
+                    <label for="inputEstados" class="form-label">Estado</label>
+                    <input class="form-control" list="datalistEstados" id="inputEstados" name="estado" placeholder="Pesquisar...">
                     <datalist id="datalistEstados">
                         <option value="Rio de Janeiro">
                         <option value="São Paulo">
@@ -17,21 +17,23 @@
                     </datalist>
                 </div>
                 <div class="col-md-3">
-                    <label for="inputCidade" class="form-label">Cidade</label>
-                    <select id="inputCidade" class="form-select">
-                        <option selected disabled value="">Selecione</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="NI">Niterói</option>
-                        <option value="IT">Itaguaí</option>
-                    </select>
+                    <label for="inputCidades" class="form-label">Cidade</label>
+                    <input class="form-control" list="datalistCidades" id="inputCidades" name="cidade" placeholder="Pesquisar...">
+                    <datalist id="datalistCidades">
+                        <option value="Rio de Janeiro">
+                        <option value="São Paulo">
+                        <option value="Niterói">
+                        <option value="Cruzeiro">
+                        <option value="Guará">
+                    </datalist>
                 </div>
                 <div class="col-md-3">
-                    <label for="inputDataInicial" class="form-label">Data</label>
-                    <input type="date" class="form-control" id="inputDataInicial">
+                    <label for="inputData" class="form-label">Data</label>
+                    <input type="date" class="form-control" name="data" id="inputData">
                 </div>
                 <div class="col-md-3">
                     <label for="inputImagem" class="form-label">Imagem</label>
-                    <input type="file" class="form-control" id="inputImagem" name="imagem">
+                    <input type="file" class="form-control" name="imagem" id="inputImagem">
                 </div>
 
                 <div class="d-flex justify-content-center mt-5">
