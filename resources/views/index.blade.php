@@ -3,8 +3,7 @@
 @section('principal')
 
 <section class="container">
-    <form action="/pesquisar" method="POST">
-    @csrf
+    <form action="/">
         <div class="row">
             <div class="col-md-3">
                 <label for="inputEstado" class="form-label">Estado</label>

@@ -10,14 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class ImagemController extends Controller
 {
 
-    public function index()
-    {
-        $imagens = DB::table('imagens')->orderByDesc('id')->get();
-
-        return view('index', ['imagens' => $imagens]);
-    }
-
-    public function pesquisa(Request $request)
+    public function index(Request $request)
     {
         $estado = $request->estado;
         $cidade = $request->cidade;
@@ -37,7 +30,7 @@ class ImagemController extends Controller
             ->when($dataFinal, function($query, $dataFinal) {
                 return $query->where('data', '<=', $dataFinal);
             })
-            ->orderByDesc('id')
+            ->orderByDesc('data')
             ->get();
 
         return view('index', ['imagens' => $imagens]);

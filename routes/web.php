@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ImagemController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +15,6 @@ use Illuminate\Support\Facades\Storage;
 */
 
 Route::get('/', [ImagemController::class, 'index']);
-
-Route::post('/pesquisar', [ImagemController::class, 'pesquisa']);
 
 Route::get('/download', [ImagemController::class, 'download']);
 
