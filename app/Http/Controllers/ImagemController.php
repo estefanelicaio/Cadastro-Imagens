@@ -12,7 +12,7 @@ class ImagemController extends Controller
 
     public function index()
     {
-        $imagens = DB::table('imagens')->get();
+        $imagens = DB::table('imagens')->orderByDesc('id')->get();
 
         return view('index', ['imagens' => $imagens]);
     }
@@ -24,20 +24,21 @@ class ImagemController extends Controller
         $dataInicial = $request->dataInicial;
         $dataFinal = $request->dataFinal;
 
-        $imagens = DB::table('imagens')->get();
-
-        if(isset($estado)) {
-            $imagens = $imagens->where('estado', '=', $estado);
-        }
-        if(isset($cidade)) {
-            $imagens = $imagens->where('cidade', '=', $cidade);
-        }
-        if(isset($dataInicial)) {
-            $imagens = $imagens->where('data', '>', $dataInicial);
-        }
-        if(isset($dataFinal)) {
-            $imagens = $imagens->where('data', '<', $dataFinal);
-        }
+        $imagens = DB::table('imagens')
+            ->when($estado, function($query, $estado) {
+                return $query->where('estado', '=', $estado);
+            })
+            ->when($cidade, function($query, $cidade) {
+                return $query->where('cidade', '=', $cidade);
+            })
+            ->when($dataInicial, function($query, $dataInicial) {
+                return $query->where('data', '>=', $dataInicial);
+            })
+            ->when($dataFinal, function($query, $dataFinal) {
+                return $query->where('data', '<=', $dataFinal);
+            })
+            ->orderByDesc('id')
+            ->get();
 
         return view('index', ['imagens' => $imagens]);
     }
