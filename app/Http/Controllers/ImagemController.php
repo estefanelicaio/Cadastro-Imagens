@@ -12,7 +12,9 @@ class ImagemController extends Controller
 
     public function index()
     {
-        return view('index');
+        $imagens = DB::table('imagens')->get();
+
+        return view('index', ['imagens' => $imagens]);
     }
 
     public function pesquisa(Request $request)
@@ -22,22 +24,28 @@ class ImagemController extends Controller
         $dataInicial = $request->dataInicial;
         $dataFinal = $request->dataFinal;
 
-        $imagens = DB::table('imagens')
-            ->where('estado', '=', $request->estado)
-            ->orWhere('cidade', '=', $request->cidade)
-            ->get();
+        $imagens = DB::table('imagens')->get();
 
-        foreach($imagens as $imagem) {
-            echo $imagem->estado . ' - ' . $imagem->cidade . " ||| ";
+        if(isset($estado)) {
+            $imagens = $imagens->where('estado', '=', $estado);
         }
+        if(isset($cidade)) {
+            $imagens = $imagens->where('cidade', '=', $cidade);
+        }
+        if(isset($dataInicial)) {
+            $imagens = $imagens->where('data', '>', $dataInicial);
+        }
+        if(isset($dataFinal)) {
+            $imagens = $imagens->where('data', '<', $dataFinal);
+        }
+
+        return view('index', ['imagens' => $imagens]);
     }
 
     public function download(Request $request)
     {
-
         $imagem = $request->query('imagem');
-
-        return Storage::download('/imagens/' . $imagem);
+        return Storage::download($imagem);
     }
 
     public function store(Request $request)
